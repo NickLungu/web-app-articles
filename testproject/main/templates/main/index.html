@@ -1,0 +1,9 @@
+{% extends 'main/layout.html' %}
+{% block title %}Main page{% endblock %}
+{% block content %}
+    <h2>time is:</h2>
+    {% for el in values %}
+        <p>{{ el }}</p>
+    {% endfor %}
+    This is the main page. Site is still being developed :(
+{% endblock %}

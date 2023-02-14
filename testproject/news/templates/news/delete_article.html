@@ -1,0 +1,12 @@
+{% extends 'news/layout.html' %}
+{% block title %}Delete news{% endblock %}
+{% block content %}
+    <div class="feature">
+        <form method="post">
+            {% csrf_token %}
+            <p>Are you sure?</p>
+            <button class="btn btn-success" type="submit">Yes, delete</button>
+            <a href="{% url 'details_view' article.id %}" class="btn btn-warning">No, go back</a>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'news/layout.html' %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+    {% csrf_token %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.date_article }}</p>
+    <p>{{ article.anons }}</p>
+    <a href="{% url 'update_view' article.id %}" class="btn btn-warning">Update this article</a>
+    <a href="{% url 'delete_view' article.id %}" class="btn btn-danger">Delete this article</a>
+{% endblock %}

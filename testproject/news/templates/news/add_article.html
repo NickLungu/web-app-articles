@@ -1,0 +1,15 @@
+{% extends 'news/layout.html' %}
+{% block title %}Adding news{% endblock %}
+{% block content %}
+    <div class="feature">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.announcement }}<br>
+            {{ form.anons }}<br>
+            {{ form.date_article }}<br>
+            <span>{{ form.error_message }}</span>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

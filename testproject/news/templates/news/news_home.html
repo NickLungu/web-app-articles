@@ -1,0 +1,16 @@
+{% extends 'news/layout.html' %}
+{% block title %}News{% endblock %}
+{% block content %}
+    {% if object_list %}
+        {% for el in object_list %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.announcement }}</p>
+                <a href="{% url 'details_view' el.id %}" class="btn btn-warning">Read all</a>
+    <!--            <a href="{% url 'details_view' el.id %}" class="btn btn-warning">Read all</a>-->
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No news</p>
+    {% endif %}
+{% endblock %}
